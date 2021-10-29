@@ -1,18 +1,62 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+    首页 -- {{ message }}
+    <a-button @click="sayHello">say</a-button>
+    所有人：{{ allPserson }}
+    <div>
+      <a-button @click="handleAboutPage">跳转 about 页面</a-button>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
+// @ is an alias to /src
 
 @Component({
-  components: {
-    HelloWorld,
-  },
+  components: {},
 })
-export default class Home extends Vue {}
+export default class Home extends Vue {
+  message = "Hello World";
+  firstName = "John";
+  lastName = "Doe";
+  // 计算属性
+  get allPserson(): string {
+    return this.firstName + "跟" + this.lastName;
+  }
+  set allPserson(value: string) {
+    const splitted = value.split("跟");
+    this.firstName = splitted[0];
+    this.lastName = splitted[1] || "";
+  }
+
+  mounted(): void {
+    console.log("mounted");
+  }
+
+  // 方法 == methods
+  sayHello(): void {
+    this.message = "Admin: Hello World";
+  }
+  handleAboutPage(): void {
+    this.$router.push({
+      path: "/about",
+    });
+  }
+
+  beforeRouteEnter(to: () => void, from: () => void, next: () => void): void {
+    console.log("beforeRouteEnter", to, from);
+    next();
+  }
+
+  beforeRouteUpdate(to: () => void, from: () => void, next: () => void): void {
+    console.log("beforeRouteUpdate", to, from);
+    next();
+  }
+
+  beforeRouteLeave(to: () => void, from: () => void, next: () => void): void {
+    console.log("beforeRouteLeave", to, from);
+    next();
+  }
+}
 </script>
