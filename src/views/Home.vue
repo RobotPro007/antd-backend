@@ -43,20 +43,5 @@ export default class Home extends Vue {
       path: "/about",
     });
   }
-
-  beforeRouteEnter(to: () => void, from: () => void, next: () => void): void {
-    console.log("beforeRouteEnter", to, from);
-    next();
-  }
-
-  beforeRouteUpdate(to: () => void, from: () => void, next: () => void): void {
-    console.log("beforeRouteUpdate", to, from);
-    next();
-  }
-
-  beforeRouteLeave(to: () => void, from: () => void, next: () => void): void {
-    console.log("beforeRouteLeave", to, from);
-    next();
-  }
 }
 </script>
