@@ -11,4 +11,5 @@ declare global {
       e: any;
     }
   }
+  declare module "*.jpg";
 }

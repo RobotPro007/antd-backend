@@ -1,26 +1,34 @@
 import Vue from "vue";
 import Router, { RouteConfig } from "vue-router";
-import index from "../views/index.vue";
-import About from "../views/about.vue";
-import Home from "../views/Home.vue";
 
 Vue.use(Router);
 
 const routes: Array<RouteConfig> = [
   {
-    path: "/",
-    name: "index",
-    component: index,
+    path: "/dashboard",
+    name: "Dashboard",
+    layout: "dashboard",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () =>
+      import(/* webpackChunkName: "dashboard" */ "../views/Dashboard.vue"),
   },
   {
-    path: "/about",
-    name: "about",
-    component: About,
+    path: "/sign-in",
+    name: "Sign-In",
+    meta: {
+      layoutClass: "layout-sign-in",
+    },
+    component: () => import("../views/Sign-In.vue"),
   },
   {
-    path: "/home",
-    name: "Home",
-    component: Home,
+    path: "/sign-up",
+    name: "Sign-Up",
+    meta: {
+      layoutClass: "layout-sign-up",
+    },
+    component: () => import("../views/Sign-Up.vue"),
   },
 ];
 
