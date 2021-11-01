@@ -12,4 +12,5 @@ declare global {
     }
   }
   declare module "*.jpg";
+  declare module "*vue-github-buttons";
 }

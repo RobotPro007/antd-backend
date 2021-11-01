@@ -115,13 +115,11 @@ export default class SignUp extends Vue {
   bg: string = Bg;
   form: any;
   beforeCreate(): void {
-    console.log("form", this);
     this.form = this.$form.createForm(this, { name: "normal_login" });
   }
   handleSubmit(e: { preventDefault: () => void }): void {
     e.preventDefault();
     this.form.validateFields((err: unknown, values: unknown): void => {
-      console.log(err);
       if (!err) {
         console.log("Received values of form: ", values);
       }
