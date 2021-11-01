@@ -39,9 +39,10 @@ export default class Home extends Vue {
     this.message = "Admin: Hello World";
   }
   handleAboutPage(): void {
-    this.$router.push({
-      path: "/about",
-    });
+    // console.log(typeof e);
+    // this.$router.push({
+    //   path: "/about",
+    // });
   }
 }
 </script>
