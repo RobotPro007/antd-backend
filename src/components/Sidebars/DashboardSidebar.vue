@@ -110,7 +110,7 @@
 import { Component, Vue, Prop } from "vue-property-decorator";
 
 @Component
-export default class extends Vue {
+export default class DashboardSidebar extends Vue {
   @Prop({ type: Boolean, default: false }) sidebarCollapsed!: boolean;
   @Prop({ type: String, default: "primary" }) sidebarColor!: string;
   @Prop({ type: String, default: "light" }) sidebarTheme!: string;
