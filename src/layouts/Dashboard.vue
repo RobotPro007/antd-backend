@@ -105,7 +105,6 @@ export default class dashboard extends Vue {
   }
   /*@computed*/
   get layoutClass(): void {
-    console.log(this.$route.meta);
     return this.$route.meta?.layoutClass;
   }
 }

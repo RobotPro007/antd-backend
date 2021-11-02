@@ -33,6 +33,10 @@ Component.registerHooks([
 import { Icon } from "@v2icons/utils";
 Vue.component("Icon", Icon);
 
+// 引入权限配置的指令
+import directive from "./directive";
+Vue.use(directive);
+
 Vue.use(Antd);
 new Vue({
   router,

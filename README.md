@@ -43,6 +43,8 @@ See [Configuration Reference](https://cli.vuejs.org/config/)
         |       |-- .DS_Store
         |       |-- bg-signup.jpg
         |       |-- img-signin.jpg
+        |-- directive 自定义指令文件
+        |-- decorators 装饰器文件
         |-- components (组件层)
         |   |-- Footers 
         |   |   |-- DashboardFooter.vue 
